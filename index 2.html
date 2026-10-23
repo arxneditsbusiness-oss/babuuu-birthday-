@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff0f5">
+<title>For Babuuu ♡</title>
+<style>
+:root{--pink:#f7b8ca;--rose:#d85d82;--cream:#fff9f2;--ink:#533b49;--lav:#e7dcff;--peach:#ffe0ce}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 10% 10%,#fff 0,transparent 35%),linear-gradient(145deg,#fff5f7,#fff7ed 48%,#f6efff);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+a{color:inherit}
+.wrap{width:min(100% - 28px,850px);margin:auto}
+.hero{min-height:94svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:42px 10px 60px;position:relative;overflow:hidden}
+.hero-card{max-width:650px;background:#ffffffb8;border:1px solid #fff;box-shadow:0 18px 60px #a64f6815;border-radius:28px;padding:34px 22px;backdrop-filter:blur(8px);position:relative;z-index:1}
+.eyebrow{font:700 11px/1.5 Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--rose)}
+h1{font-size:clamp(3.2rem,15vw,6.3rem);line-height:.92;letter-spacing:-3px;margin:17px 0;color:#bd5576;font-weight:normal}
+h2{font-size:clamp(2rem,8vw,3.2rem);font-weight:normal;line-height:1.05;margin:0 0 14px;color:#a84e70}
+h3{font-weight:normal;font-size:1.5rem;margin:10px 0}
+p{line-height:1.75}
+.hero p{font-size:1.08rem;max-width:470px;margin:15px auto 24px}
+.btn{border:0;border-radius:999px;background:#bd5576;color:white;padding:13px 19px;box-shadow:0 7px 18px #bd55762c;transition:transform .2s,filter .2s;display:inline-block;text-decoration:none}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.btn.secondary{background:#fff;color:#a84e70;border:1px solid #f0bfd0;box-shadow:none}
+.float{position:absolute;font-size:clamp(20px,5vw,38px);animation:float 5s ease-in-out infinite;opacity:.8;pointer-events:none}
+.float:nth-child(1){top:8%;left:8%}.float:nth-child(2){top:18%;right:9%;animation-delay:-1s}.float:nth-child(3){bottom:15%;left:12%;animation-delay:-2s}.float:nth-child(4){bottom:10%;right:12%;animation-delay:-3s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(8deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+section{padding:62px 0}
+.section-head{text-align:center;margin:0 auto 28px;max-width:570px}
+.kicker{font:700 10px Arial,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:#c46a88}
+.note{background:#fffdf9;border:1px solid #fff;box-shadow:0 12px 32px #74465b12;border-radius:20px;padding:23px}
+.timeline{display:grid;gap:14px}
+.memory-row{display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:start}
+.dot{width:42px;height:42px;border-radius:50%;background:#ffe0e9;display:grid;place-items:center;font-size:19px}
+.memory-row .note{padding:17px 18px}
+.memory-row p{margin:7px 0 0}
+.polaroids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.polaroid{background:#fff;padding:10px 10px 18px;box-shadow:0 10px 22px #6d43531a;transform:rotate(-2deg);transition:transform .25s;min-width:0}
+.polaroid:nth-child(2n){transform:rotate(2.5deg);margin-top:18px}
+.polaroid:hover{transform:rotate(0) translateY(-4px)}
+.photo{width:100%;aspect-ratio:4/4.5;display:grid;place-items:center;text-align:center;overflow:hidden;background:linear-gradient(135deg,#fbe0e8,#fff0d8 55%,#e9e1ff);color:#98627a;padding:10px;font:13px Arial,sans-serif}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.polaroid small{display:block;text-align:center;font-size:15px;margin-top:13px}
+.tiny{font:12px/1.5 Arial,sans-serif;color:#8c6a7a}
+.music-row{display:grid;grid-template-columns:1fr;gap:12px}
+.music-card{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fffdf9;border:1px solid #fff;border-radius:17px;padding:15px}
+.music-card strong{display:block;font-size:1.05rem;font-weight:normal}
+.music-card .tiny{margin-top:4px}
+.letter{background:linear-gradient(145deg,#fffdf8,#fff0f4);border:1px solid white;border-radius:24px;padding:26px 22px;box-shadow:0 15px 35px #74465b12}
+.letter p{white-space:pre-line}
+.quiz-card{text-align:center}
+.quiz-options{display:grid;gap:10px;margin:20px auto;max-width:450px}
+.quiz-options button{border:1px solid #f1cad6;background:#fff;border-radius:14px;padding:13px;color:var(--ink)}
+.quiz-options button:active{transform:scale(.99)}
+#quiz-feedback{min-height:30px;color:#b44c71}
+.envelope-area{text-align:center;padding:8px}
+.envelope{border:0;background:transparent;display:block;margin:15px auto;font-size:90px;filter:drop-shadow(0 8px 9px #a64f6820);animation:float 4s ease-in-out infinite}
+.hidden{display:none!important}
+.reveal{background:#fffdf9;border:1px dashed #e7a7bd;border-radius:20px;padding:23px;margin-top:18px;animation:rise .6s ease both}
+.final{position:relative;text-align:center;overflow:hidden;background:linear-gradient(145deg,#ffe7ef,#fff4e8,#eee6ff);border-radius:30px;padding:36px 20px}
+.final h2{font-size:clamp(2.3rem,10vw,4.3rem)}
+.big-heart{font-size:55px;display:inline-block;animation:heartbeat 1.3s infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.17)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+footer{text-align:center;padding:25px 0 45px;color:#956d7d;font-size:13px}
+.sparkle{position:fixed;z-index:9;pointer-events:none;animation:fall 1.4s ease-out forwards;font-size:20px}
+@keyframes fall{from{transform:translateY(0) scale(.7);opacity:1}to{transform:translateY(150px) scale(1.4);opacity:0}}
+@media(min-width:600px){.polaroids{grid-template-columns:repeat(4,minmax(0,1fr))}.music-row{grid-template-columns:1fr 1fr}.hero-card{padding:48px 42px}.letter{padding:34px 40px}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <span class="float">♡</span><span class="float">✿</span><span class="float">✨</span><span class="float">♥</span>
+  <div class="hero-card">
+    <div class="eyebrow">A tiny universe made just for you</div>
+    <h1>Happy Birthday,<br>Babuuu</h1>
+    <p>For the girl who turned one ordinary day into a memory my heart will keep forever.</p>
+    <p style="font-size:1.5rem;margin:4px 0 22px">୨ৎ 27 October — our little beginning ୨ৎ</p>
+    <button class="btn" onclick="document.querySelector('#our-story').scrollIntoView({behavior:'smooth'})">Open your scrapbook ♡</button>
+  </div>
+</header>
+
+<main class="wrap">
+<section id="our-story">
+  <div class="section-head"><div class="kicker">Chapter one · the day it began</div><h2>Our story, my favourite story</h2><p>Some dates become special because something beautiful begins. For me, 27 October will always be that date.</p></div>
+  <div class="timeline">
+    <div class="memory-row"><div class="dot">🌷</div><div class="note"><h3>27 October</h3><p>The first time I saw you was on your birthday. I still love that the day the world celebrated you became the day my heart noticed you.</p></div></div>
+    <div class="memory-row"><div class="dot">✨</div><div class="note"><h3>Love at first glance</h3><p>There was something about that very first look. I didn't know all the little things that would make me love you, but somehow I wanted to know them.</p></div></div>
+    <div class="memory-row"><div class="dot">💌</div><div class="note"><h3>And now, Babuuu…</h3><p>I'm grateful that I got to meet you. This little website is a tiny reminder that you are loved, celebrated, and so very special to me.</p></div></div>
+  </div>
+</section>
+
+<section id="memories">
+  <div class="section-head"><div class="kicker">Little moments, forever kept</div><h2>Our Polaroid wall 📸</h2><p>Replace these sample cards with your real photos. Add the image files to the same GitHub repository and name them <b>photo1.jpg</b> through <b>photo4.jpg</b> (or edit the filenames below).</p></div>
+  <div class="polaroids">
+    <div class="polaroid"><div class="photo"><img src="photo1.jpg" alt="Our first favourite photo" onerror="this.remove();this.parentElement.innerHTML='📷<br><br>Add photo1.jpg<br><span class=&quot;tiny&quot;>Our first memory</span>'"></div><small>the beginning ♡</small></div>
+    <div class="polaroid"><div class="photo"><img src="photo2.jpg" alt="A favourite memory together" onerror="this.remove();this.parentElement.innerHTML='🌷<br><br>Add photo2.jpg<br><span class=&quot;tiny&quot;>A moment I love</span>'"></div><small>my happy place</small></div>
+    <div class="polaroid"><div class="photo"><img src="photo3.jpg" alt="A silly happy moment" onerror="this.remove();this.parentElement.innerHTML='🥹<br><br>Add photo3.jpg<br><span class=&quot;tiny&quot;>A little forever</span>'"></div><small>just us</small></div>
+    <div class="polaroid"><div class="photo"><img src="photo4.jpg" alt="A memory to keep forever" onerror="this.remove();this.parentElement.innerHTML='💗<br><br>Add photo4.jpg<br><span class=&quot;tiny&quot;>More memories soon</span>'"></div><small>to many more ♡</small></div>
+  </div>
+  <p class="tiny" style="text-align:center;margin-top:20px">Tip: JPG photos work best. Keep filenames simple and use the exact same capitalisation.</p>
+</section>
+
+<section id="music">
+  <div class="section-head"><div class="kicker">Press play, think of us</div><h2>Our little soundtrack 🎶</h2><p>Music starts only when you tap a button. Add your own audio files to the repository to make both players work.</p></div>
+  <div class="music-row">
+    <div class="music-card"><div><strong>🎹 Soft piano</strong><div class="tiny">A calm little background melody</div></div><button class="btn secondary" id="pianoBtn" onclick="toggleTrack('piano')">Play ♫</button></div>
+    <div class="music-card"><div><strong>❤️ Tum Hi Ho</strong><div class="tiny">Our special song</div></div><button class="btn" id="songBtn" onclick="toggleTrack('song')">Play ♡</button></div>
+  </div>
+  <p class="tiny" style="text-align:center">Add audio files named <b>piano.mp3</b> and <b>tum-hi-ho.mp3</b>. Use audio you have the right to use. The page doesn't stream music from another site.</p>
+  <audio id="piano" src="piano.mp3" loop preload="none"></audio>
+  <audio id="song" src="tum-hi-ho.mp3" preload="none"></audio>
+</section>
+
+<section id="letter">
+  <div class="section-head"><div class="kicker">Open when you need a reminder</div><h2>A letter for my Babuuu 💌</h2></div>
+  <div class="letter">
+    <p>My Babuuu,
+
+Happy birthday, my love. ❤️
+
+I still think about 27 October — the day I saw you for the first time, on your birthday, and fell for you at first glance. I didn't know then how many little things about you would become so precious to me. I just knew that there was something about you I wanted to remember.
+
+If I could give you one thing today, it would be the chance to see yourself through my eyes for a moment. You'd see someone beautiful, someone special, someone whose presence can make an ordinary day feel softer and brighter. You'd see the girl I'm so grateful I got to meet.
+
+I hope this new year of your life brings you peace when things feel heavy, laughter that makes your cheeks hurt, dreams that come closer, and people who remind you how loved you are. On the days when you doubt yourself, I hope you remember that you never have to be perfect to be precious to me.
+
+This little scrapbook can't hold every feeling I have for you, but each page is my small way of saying: I'm glad I saw you that day. I'm glad our paths crossed. And if I could go back to that first moment, I'd still want to look your way.
+
+Happy birthday, Babuuu. Keep being you. That's my favourite thing about you.
+
+With all my love,
+Your person ♡</p>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="section-head"><div class="kicker">A tiny memory game</div><h2>Do you remember our beginning? 🌸</h2><p>Choose the answer that belongs to our story.</p></div>
+  <div class="note quiz-card">
+    <h3 id="question">When did I first see you?</h3>
+    <div class="quiz-options" id="options">
+      <button onclick="answer(false)">14 February</button>
+      <button onclick="answer(true)">27 October ♡</button>
+      <button onclick="answer(false)">1 January</button>
+    </div>
+    <div id="quiz-feedback" aria-live="polite"></div>
+    <button class="btn secondary" id="nextQuiz" onclick="nextQuestion()" style="display:none">Next memory →</button>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="section-head"><div class="kicker">One last little thing</div><h2>There's a secret for you…</h2><p>Tap the envelope. It's been waiting for you, Babuuu.</p></div>
+  <div class="envelope-area">
+    <button class="envelope" onclick="openSecret()" aria-label="Open the secret letter">💌</button>
+    <button class="btn secondary" onclick="openSecret()">Open my secret ♡</button>
+    <div class="reveal hidden" id="secretReveal"><h3>One promise, just for you</h3><p>I can't promise every day will be perfect. But I can promise to keep choosing kindness, honesty, effort, and little ways to make you feel loved. I want to keep collecting memories with you — one ordinary, beautiful day at a time.</p><p><b>And if I could relive one first moment, I'd find you again on 27 October. ♡</b></p></div>
+  </div>
+</section>
+
+<section id="final">
+  <div class="final">
+    <div class="kicker">Your final surprise</div>
+    <div class="big-heart">❤️</div>
+    <h2>Happy Birthday,<br>my Babuuu</h2>
+    <p>Of all the dates in the world, 27 October gave me the memory of seeing you for the first time. I'll always be thankful for that little beginning.</p>
+    <p style="font-size:1.25rem">You are my favourite plot twist, my sweetest memory, and a person I hope life is gentle with.</p>
+    <button class="btn" onclick="finalSurprise()">Tap for one last hug 🫂</button>
+    <p id="finalMessage" class="hidden"><b>Sending you the biggest virtual hug, a thousand forehead kisses, and all the love this tiny page can hold. I love you, Babuuu. ♡</b></p>
+  </div>
+</section>
+</main>
+<footer>Made with all my heart, just for Babuuu ♡<br><span>One little website. So much love.</span></footer>
+
+<script>
+const tracks={piano:document.getElementById('piano'),song:document.getElementById('song')};
+const buttons={piano:document.getElementById('pianoBtn'),song:document.getElementById('songBtn')};
+async function toggleTrack(name){
+  const audio=tracks[name],button=buttons[name];
+  if(!audio.paused){audio.pause();button.textContent=name==='song'?'Play ♡':'Play ♫';return;}
+  Object.keys(tracks).forEach(k=>{if(k!==name){tracks[k].pause();buttons[k].textContent=k==='song'?'Play ♡':'Play ♫';}});
+  try{await audio.play();button.textContent='Pause ❚❚';}
+  catch(e){alert('Audio file not found yet. Upload '+(name==='piano'?'piano.mp3':'tum-hi-ho.mp3')+' to your GitHub repository, then reload the site.');}
+}
+tracks.song.addEventListener('ended',()=>buttons.song.textContent='Play ♡');
+let quizIndex=0;
+const questions=[
+ {q:'When did I first see you?',a:['14 February','27 October ♡','1 January'],correct:1,good:'Yes, Babuuu — your birthday became the date of my favourite first memory. 💗',bad:'It was 27 October — the day I first saw you. ♡'},
+ {q:'What happened when I first saw you?',a:['I fell for you at first glance','I forgot the date','I was looking for cake'],correct:0,good:'Exactly. One glance, and somehow you stayed in my heart. 🥹',bad:'I fell for you at first glance. That first look stayed with me. ❤️'},
+ {q:'What do I want us to keep making?',a:['More beautiful memories','More reasons to smile','Both, forever ♡'],correct:2,good:'Both, forever — one memory and one smile at a time. 💌',bad:'Both! More beautiful memories and more reasons to smile. ♡'}
+];
+function renderQuiz(){const q=questions[quizIndex];document.getElementById('question').textContent=q.q;document.getElementById('options').innerHTML=q.a.map((v,i)=>'<button onclick="answer('+(i===q.correct)+')">'+v+'</button>').join('');document.getElementById('quiz-feedback').textContent='';document.getElementById('nextQuiz').style.display='none';}
+function answer(ok){const q=questions[quizIndex];document.getElementById('quiz-feedback').textContent=ok?q.good:q.bad;document.getElementById('nextQuiz').style.display='inline-block';document.getElementById('nextQuiz').textContent=quizIndex===questions.length-1?'Replay quiz ↻':'Next memory →';}
+function nextQuestion(){quizIndex=(quizIndex+1)%questions.length;renderQuiz();}
+function openSecret(){const r=document.getElementById('secretReveal');r.classList.remove('hidden');r.scrollIntoView({behavior:'smooth',block:'center'});sprinkle();}
+function finalSurprise(){document.getElementById('finalMessage').classList.remove('hidden');sprinkle(30);document.getElementById('finalMessage').scrollIntoView({behavior:'smooth',block:'center'});}
+function sprinkle(count=18){const icons=['♡','♥','✨','🌸','💗'];for(let i=0;i<count;i++){const el=document.createElement('span');el.className='sparkle';el.textContent=icons[Math.floor(Math.random()*icons.length)];el.style.left=Math.random()*100+'vw';el.style.top=(10+Math.random()*65)+'vh';document.body.appendChild(el);setTimeout(()=>el.remove(),1500);}}
+</script>
+</body>
+</html>
