@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff4ef">
+<meta name="description" content="A little birthday scrapbook made with love for Babuuu.">
+<title>For Babuuu ♡</title>
+<style>
+  :root{
+    --paper:#fffaf5; --cream:#fff1e8; --pink:#f5b9c8; --rose:#c85b78;
+    --red:#963c56; --ink:#4b3035; --muted:#8b6d72; --tape:#f4d9a6;
+    --shadow:0 14px 35px rgba(116,55,72,.13);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+  button{font:inherit;cursor:pointer}
+  button:focus-visible,a:focus-visible{outline:3px solid var(--rose);outline-offset:4px}
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.12;background-image:radial-gradient(#8e5c66 .6px,transparent .6px);background-size:7px 7px}
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:15;display:flex;justify-content:space-between;align-items:center;padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top));background:rgba(255,250,245,.88);backdrop-filter:blur(12px);border-bottom:1px solid #f2dce0}
+  .brand{font-size:14px;letter-spacing:.08em;color:var(--red)}
+  .music-controls{display:flex;gap:7px;align-items:center}
+  .small-btn{border:1px solid #e8c6ce;background:#fffaf5;color:var(--red);border-radius:999px;padding:8px 11px;font-size:12px}
+  main{padding-top:70px}
+  section{padding:64px 20px;max-width:760px;margin:0 auto}
+  .hero{min-height:88svh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding-top:44px}
+  .hero-card{width:min(100%,480px);padding:34px 22px 30px;background:#fffdf9;border:1px solid #f0d8d7;border-radius:8px;box-shadow:var(--shadow);transform:rotate(-1deg);position:relative}
+  .hero-card:before{content:"";position:absolute;top:-12px;left:38%;width:100px;height:27px;background:rgba(244,217,166,.72);transform:rotate(-4deg)}
+  .eyebrow{font-family:Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:10px;color:var(--rose)}
+  h1{font-size:clamp(42px,12vw,70px);line-height:.98;margin:20px 0 16px;font-weight:normal;color:var(--red)}
+  h1 em{font-size:.72em;display:block;color:#bd7c8d;margin-top:8px}
+  .hero p{font-size:16px;line-height:1.7;color:var(--muted);max-width:310px;margin:0 auto 24px}
+  .primary{border:0;background:var(--red);color:white;padding:14px 22px;border-radius:999px;box-shadow:0 7px 18px #963c5630;transition:transform .2s}
+  .primary:active{transform:scale(.97)}
+  .tiny{font:11px Arial,sans-serif;color:#a9898f;margin-top:18px}
+  .float{position:absolute;font-size:22px;animation:float 4s ease-in-out infinite;opacity:.8}
+  .f1{left:9%;top:19%}.f2{right:9%;top:30%;animation-delay:1s}.f3{left:14%;bottom:17%;animation-delay:2s}.f4{right:14%;bottom:13%;animation-delay:.6s}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-13px) rotate(8deg)}}
+  .section-head{text-align:center;margin-bottom:28px}
+  .section-head .number{font:11px Arial,sans-serif;letter-spacing:.2em;color:var(--rose)}
+  h2{font-size:clamp(30px,8vw,43px);font-weight:normal;color:var(--red);margin:10px 0}
+  .section-head p{font-size:15px;line-height:1.7;color:var(--muted);margin:0 auto;max-width:430px}
+  .letter-wrap{background:#fffdf9;border:1px solid #f0d8d7;box-shadow:var(--shadow);padding:18px;max-width:510px;margin:auto;position:relative}
+  .letter-wrap:after{content:"";position:absolute;right:20px;top:-9px;width:72px;height:20px;background:#f5c6d0aa;transform:rotate(5deg)}
+  .envelope{width:100%;min-height:190px;border:1px solid #e9b9c6;border-radius:5px;background:linear-gradient(145deg,#ffe9ed,#f8c9d4);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--red);overflow:hidden}
+  .envelope .seal{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff6f2;box-shadow:0 3px 8px #963c5622;font-size:24px}
+  .envelope span{font-size:14px}
+  .letter-content{display:none;padding:22px 8px 8px;line-height:1.9;font-size:16px;white-space:pre-line}
+  .letter-content.show{display:block;animation:fadeIn .7s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
+  .polaroid{background:white;padding:9px 9px 15px;box-shadow:0 7px 18px #6f3d4b18;transform:rotate(var(--tilt,-2deg));border:1px solid #f2e6df}
+  .polaroid:nth-child(even){--tilt:2.5deg}
+  .photo{width:100%;aspect-ratio:4/4.5;background:linear-gradient(135deg,#f9dce2,#fff0db);display:flex;align-items:center;justify-content:center;text-align:center;color:#9b6875;font:12px Arial,sans-serif;overflow:hidden}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo-caption{text-align:center;padding:11px 3px 0;font-size:14px;line-height:1.35}
+  .photo-caption small{display:block;color:#b0838c;font-size:10px;margin-top:5px;font-family:Arial,sans-serif;letter-spacing:.06em}
+  .memory-note{margin-top:24px;text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
+  .memory-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .memory-btn{background:#fffdf9;border:1px solid #efd4db;border-radius:7px;padding:17px 10px;box-shadow:0 5px 12px #6f3d4b0d;color:var(--red);min-height:94px}
+  .memory-btn span{display:block;font-size:23px;margin-bottom:8px}
+  .memory-btn small{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+  .reveal{display:none;margin-top:15px;background:#fff2f2;border-left:3px solid var(--pink);padding:17px;line-height:1.7;font-size:15px;animation:fadeIn .4s}
+  .reveal.show{display:block}
+  .game-card{background:#fffdf9;border:1px dashed #e6b5c2;padding:22px;text-align:center;border-radius:8px}
+  .game-card p{line-height:1.7;color:var(--muted)}
+  .choices{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .choice{background:#fff1f3;border:1px solid #efc7d1;color:var(--red);border-radius:999px;padding:10px 15px}
+  .choice.correct{background:#f3d5dc}
+  .game-result{min-height:28px;color:var(--red);font-size:14px}
+  .cake-area{text-align:center;background:radial-gradient(ellipse at center,#fff1e9 0%,#fffaf5 72%);padding:26px 10px;border-radius:12px}
+  .cake{font-size:92px;filter:drop-shadow(0 8px 8px #9e4b5720);margin:10px}
+  .cake-caption{color:var(--muted);font-size:14px;line-height:1.6}
+  .wish{display:none;margin:20px auto 0;max-width:440px;font-size:19px;line-height:1.7;color:var(--red);animation:fadeIn .8s}
+  .wish.show{display:block}
+  .final-card{background:#fffdf9;padding:26px 20px;border:1px solid #f0d8d7;box-shadow:var(--shadow);text-align:center;position:relative}
+  .final-card .big-heart{font-size:42px}
+  .final-card p{line-height:1.9;color:#76545b;font-size:16px;white-space:pre-line}
+  .signature{font-size:24px;color:var(--red);font-style:italic;margin-top:22px}
+  footer{text-align:center;padding:25px 20px 50px;color:#b18d94;font-size:12px}
+  .sparkle{position:fixed;pointer-events:none;z-index:30;font-size:20px;animation:burst 1.4s ease-out forwards}
+  @keyframes burst{0%{opacity:1;transform:translateY(0) scale(.6)}100%{opacity:0;transform:translateY(-100px) scale(1.4)}}
+  .hidden{display:none!important}
+  @media(min-width:600px){section{padding:78px 28px}.photo-grid{gap:25px}.hero{min-height:90vh}.memory-buttons{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<header class="topbar">
+  <div class="brand">A LITTLE BOOK OF US ♡</div>
+  <div class="music-controls">
+    <button class="small-btn" id="pianoBtn" aria-label="Play or pause piano music">♫ Piano</button>
+    <button class="small-btn" id="songBtn" aria-label="Play or pause our song">♡ Our song</button>
+  </div>
+</header>
+<!-- MUSIC SETUP: upload piano.mp3 and song.mp3 into the same GitHub repository.
+     Use music you own or have permission to share. Audio starts only after a tap. -->
+<audio id="pianoAudio" src="piano.mp3" loop preload="none"></audio>
+<audio id="songAudio" src="song.mp3" loop preload="none"></audio>
+
+<main>
+<section class="hero" id="home">
+  <span class="float f1">♡</span><span class="float f2">✦</span><span class="float f3">✿</span><span class="float f4">♡</span>
+  <div class="hero-card">
+    <div class="eyebrow">A tiny little surprise, made with love</div>
+    <h1>For my<em>Babuuu ♡</em></h1>
+    <p>Some people make the world feel softer just by being in it. You are that person for me.</p>
+    <button class="primary" id="enterBtn">Open your little scrapbook ♡</button>
+    <div class="tiny">made just for you · with all my heart</div>
+  </div>
+</section>
+
+<div id="scrapbook" class="hidden">
+<section id="letter">
+  <div class="section-head"><div class="number">01 — A LITTLE LETTER</div><h2>Something for you</h2><p>There's a tiny letter waiting for you. Tap the envelope to open it.</p></div>
+  <div class="letter-wrap">
+    <button class="envelope" id="openLetter" aria-expanded="false">
+      <div class="seal">♡</div><span>To my favourite person</span><small>tap to open</small>
+    </button>
+    <div class="letter-content" id="letterContent">My Babuuu,
+
+I wish I could wrap all the love I have for you into one little letter. You make ordinary moments feel special, and even on days when everything feels a little messy, thinking of you makes me smile.
+
+I hope this new year of your life brings you gentle mornings, happy surprises, big dreams coming true, and a hundred little reasons to laugh. You deserve to feel loved not just today, but on the random Tuesdays too.
+
+Thank you for being you. If I could choose again, I'd still want to know you, make memories with you, and keep finding new reasons to love you.
+
+Happy Birthday, my Babuuu. This little corner of the internet is yours. ♡</div>
+  </div>
+</section>
+
+<section id="memories">
+  <div class="section-head"><div class="number">02 — OUR LITTLE WORLD</div><h2>Moments I keep</h2><p>Little snapshots, big feelings. Replace these placeholders with your favourite photos together.</p></div>
+  <!-- PHOTO SETUP: upload your photos to this repository and change each src below.
+       Example: src="photo-1.jpg". Keep captions personal and kind. -->
+  <div class="photo-grid">
+    <article class="polaroid"><div class="photo"><img src="photo-1.jpg" alt="Our favourite memory" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>Add photo-1.jpg<br>to your repository ♡</span>')"></div><div class="photo-caption">My favourite kind of day<small>MEMORY NO. 01</small></div></article>
+    <article class="polaroid"><div class="photo"><img src="photo-2.jpg" alt="A little moment with you" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>Add photo-2.jpg<br>to your repository ♡</span>')"></div><div class="photo-caption">You + me, always smiling<small>MEMORY NO. 02</small></div></article>
+    <article class="polaroid"><div class="photo"><img src="photo-3.jpg" alt="A memory that makes me smile" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>Add photo-3.jpg<br>to your repository ♡</span>')"></div><div class="photo-caption">A moment I'd relive<small>MEMORY NO. 03</small></div></article>
+    <article class="polaroid"><div class="photo"><img src="photo-4.jpg" alt="One more memory together" onerror="this.style.display='none';this.parentElement.insertAdjacentHTML('beforeend','<span>Add photo-4.jpg<br>to your repository ♡</span>')"></div><div class="photo-caption">My person, my peace<small>MEMORY NO. 04</small></div></article>
+  </div>
+  <p class="memory-note">P.S. You can change every caption. The best details are the ones only we understand. ♡</p>
+</section>
+
+<section id="little-things">
+  <div class="section-head"><div class="number">03 — OPEN WHENEVER</div><h2>Little hugs for later</h2><p>Tap a note whenever you need a reminder of how loved you are.</p></div>
+  <div class="memory-buttons">
+    <button class="memory-btn" data-note="miss"><span>💌</span>When you miss me<small>open your note</small></button>
+    <button class="memory-btn" data-note="sad"><span>🌷</span>When you're sad<small>a little comfort</small></button>
+    <button class="memory-btn" data-note="doubt"><span>✨</span>When you doubt yourself<small>remember this</small></button>
+    <button class="memory-btn" data-note="hug"><span>🧸</span>When you need a hug<small>sending one now</small></button>
+  </div>
+  <div class="reveal" id="noteReveal" aria-live="polite"></div>
+</section>
+
+<section id="game">
+  <div class="section-head"><div class="number">04 — A TINY GAME</div><h2>One very important question</h2><p>There is a tiny secret waiting behind the right answer.</p></div>
+  <div class="game-card">
+    <div style="font-size:34px">💗</div>
+    <p>What is my favourite thing about you?</p>
+    <div class="choices">
+      <button class="choice" data-answer="a">Your smile</button>
+      <button class="choice" data-answer="b">Your heart</button>
+      <button class="choice" data-answer="c">Everything, silly</button>
+    </div>
+    <div class="game-result" id="gameResult" aria-live="polite"></div>
+    <button class="primary hidden" id="unlockBtn">Unlock your secret ♡</button>
+    <div class="reveal" id="secretReveal">Surprise, Babuuu! 🥹 The secret is that I could make a hundred lists and still leave things out. It's your smile, your heart, your little habits, your laugh — all the tiny things that make you YOU. ♡</div>
+  </div>
+</section>
+
+<section id="cake">
+  <div class="section-head"><div class="number">05 — MAKE A WISH</div><h2>Birthday magic ✨</h2><p>Take a breath, make your sweetest wish, then tap the cake.</p></div>
+  <div class="cake-area">
+    <div class="cake" id="cakeEmoji" role="img" aria-label="Birthday cake">🎂</div>
+    <button class="primary" id="wishBtn">I made a wish! Blow the candles ♡</button>
+    <div class="wish" id="wishText">May this year be softer on your heart, brighter for your dreams, and full of the kind of happiness you give to everyone around you. Happy Birthday, my Babuuu! 🎉💗</div>
+    <p class="cake-caption" id="cakeCaption">Tap the button when you're ready.</p>
+  </div>
+</section>
+
+<section id="final">
+  <div class="section-head"><div class="number">06 — THE LAST PAGE</div><h2>One last thing…</h2><p>Every scrapbook needs a final page. This one is my favourite.</p></div>
+  <div class="final-card">
+    <div class="big-heart">💌</div>
+    <div class="eyebrow">for the girl who means so much to me</div>
+    <p id="finalLetter">Happy Birthday, my Babuuu. ♡
+
+I hope when you look back at this little page, you remember that someone sat down and made it just for you — one tiny detail at a time.
+
+You don't have to be perfect to be precious to me. You don't have to do anything special to deserve love. Just being yourself is already something beautiful.
+
+Here's to more memories, more silly moments, more reasons to laugh, and more pages in our story. I hope I get to keep cheering for you, holding your hand through the hard bits, and celebrating every little win.
+
+Today is your day. Let yourself feel special, because you are.
+
+I love you, Babuuu. Happy Birthday. ♡</p>
+    <div class="signature">Always yours ♡</div>
+    <button class="primary" id="confettiBtn" style="margin-top:20px">One more sprinkle of magic ✨</button>
+  </div>
+</section>
+<footer>made with love, just for Babuuu ♡<br><span style="font-size:10px">a little digital scrapbook to keep</span></footer>
+</div>
+</main>
+<div id="confettiLayer" aria-hidden="true"></div>
+<script>
+  // PERSONALIZE: edit the letters, notes, photo captions, and colours in this file.
+  const $ = (id) => document.getElementById(id);
+  const scrapbook = $("scrapbook");
+  $("enterBtn").addEventListener("click", () => {
+    scrapbook.classList.remove("hidden");
+    $("letter").scrollIntoView({behavior:"smooth"});
+    sprinkle(14);
+  });
+  $("openLetter").addEventListener("click", () => {
+    const content = $("letterContent");
+    const opened = content.classList.toggle("show");
+    $("openLetter").setAttribute("aria-expanded", String(opened));
+    $("openLetter").querySelector("small").textContent = opened ? "your letter is open ♡" : "tap to open";
+    if(opened) sprinkle(8);
+  });
+
+  const notes = {
+    miss: "If you miss me right now, imagine the biggest, warmest hug. Distance or busy days don't change how much you matter to me. I'm sending you a forehead kiss and a reminder: you're never far from my heart. ♡",
+    sad: "Hey, my Babuuu. You don't have to pretend to be okay every second. Take your time, breathe, drink some water, and be gentle with yourself. You deserve comfort on the hard days too. I'm in your corner. 🌷",
+    doubt: "In case your brain is being mean to you today: you're thoughtful, special, capable, and full of things that make you wonderful. You don't need to prove your worth. I hope you see yourself with a little of the love I see you with. ✨",
+    hug: "Emergency virtual hug incoming! 🫂 Wrap your arms around yourself for five seconds. That's me giving you a squeeze, a tiny forehead kiss, and saying: you've got this, and you are so, so loved. 🧸"
+  };
+  document.querySelectorAll("[data-note]").forEach(btn => btn.addEventListener("click", () => {
+    const box = $("noteReveal");
+    box.textContent = notes[btn.dataset.note];
+    box.classList.add("show");
+    sprinkle(5);
+  }));
+
+  document.querySelectorAll("[data-answer]").forEach(btn => btn.addEventListener("click", () => {
+    document.querySelectorAll("[data-answer]").forEach(b => b.classList.remove("correct"));
+    btn.classList.add("correct");
+    $("gameResult").textContent = btn.dataset.answer === "c" ? "You know me too well, Babuuu. 🥹" : "That's one of my favourite things… but there's more. ♡";
+    $("unlockBtn").classList.remove("hidden");
+  }));
+  $("unlockBtn").addEventListener("click", () => {
+    $("secretReveal").classList.add("show");
+    $("secretReveal").scrollIntoView({behavior:"smooth",block:"center"});
+    sprinkle(18);
+  });
+
+  let wished = false;
+  $("wishBtn").addEventListener("click", () => {
+    wished = !wished;
+    $("cakeEmoji").textContent = wished ? "🍰" : "🎂";
+    $("wishBtn").textContent = wished ? "Wish made ♡" : "I made a wish! Blow the candles ♡";
+    $("wishText").classList.toggle("show", wished);
+    $("cakeCaption").textContent = wished ? "I hope every beautiful thing finds its way to you. ♡" : "Tap the button when you're ready.";
+    if(wished) sprinkle(28);
+  });
+  $("confettiBtn").addEventListener("click", () => sprinkle(34));
+
+  function sprinkle(count){
+    const symbols = ["♡","✦","✨","💗","🌸","♥"];
+    const layer = $("confettiLayer");
+    for(let i=0;i<count;i++){
+      const el = document.createElement("span");
+      el.className = "sparkle";
+      el.textContent = symbols[Math.floor(Math.random()*symbols.length)];
+      el.style.left = (5 + Math.random()*90) + "vw";
+      el.style.top = (45 + Math.random()*45) + "vh";
+      el.style.animationDelay = (Math.random()*.35) + "s";
+      layer.appendChild(el);
+      setTimeout(() => el.remove(), 1900);
+    }
+  }
+
+  // Audio buttons: host your own/authorized audio files named piano.mp3 and song.mp3.
+  const piano = $("pianoAudio"), song = $("songAudio");
+  async function toggleAudio(which, other, btn, label){
+    if(which.paused){
+      try{
+        other.pause();
+        await which.play();
+        $("pianoBtn").textContent = piano.paused ? "♫ Piano" : "♫ Piano on";
+        $("songBtn").textContent = song.paused ? "♡ Our song" : "♡ Song on";
+      }catch(e){
+        btn.textContent = label + " — add audio file";
+      }
+    } else {
+      which.pause();
+      btn.textContent = label;
+    }
+  }
+  $("pianoBtn").addEventListener("click", () => toggleAudio(piano, song, $("pianoBtn"), "♫ Piano"));
+  $("songBtn").addEventListener("click", () => toggleAudio(song, piano, $("songBtn"), "♡ Our song"));
+</script>
+</body>
+</html>
